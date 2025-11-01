@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi!</title>
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}">
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="input_usertxt" placeholder="Enter letters..">
+        <input type="submit" value="turn it">
+    </form>
+    
+    {% if res %}
+        <p>{{ res }}</p>
+    {% endif %}
+
+</body>
+</html>
